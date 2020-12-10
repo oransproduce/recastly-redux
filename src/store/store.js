@@ -5,7 +5,11 @@ import exampleVideoData from '../data/exampleVideoData.js';
 
 
 // TODO:  Create your redux store, apply thunk as a middleware, and export it!
-export default function configureStore(initialState) {
+var sample = {
+  videoList: exampleVideoData,
+  currentVideo: exampleVideoData[0]
+};
+export default function configureStore(initialState = sample) {
   return createStore(
     rootReducer,
     initialState,
