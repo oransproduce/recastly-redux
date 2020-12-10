@@ -9,10 +9,9 @@ var sample = {
   videoList: exampleVideoData,
   currentVideo: exampleVideoData[0]
 };
-export default function configureStore(initialState = sample) {
-  return createStore(
-    rootReducer,
-    initialState,
-    applyMiddleware(thunk)
-  );
-}
+var store = createStore(
+  rootReducer,
+  sample,
+  applyMiddleware(thunk)
+);
+export default store;
